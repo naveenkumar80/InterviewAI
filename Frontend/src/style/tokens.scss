@@ -1,0 +1,104 @@
+// ── High-Craft Utilitarian Design Tokens (Zero AI Slop / Vibe-Free) ────────────
+:root {
+  // Pure Neutrals & Canvas (Linear / Vercel Graphite Palette)
+  --bg-page: #09090b;       // Deepest Obsidian
+  --bg-subtle: #0f0f12;     // Elevated background
+  --bg-card: #141417;       // Card surface
+  --bg-card-hover: #1a1a1f; // Card hover state
+  --bg-panel: #18181c;      // Panel background
+  --bg-input: #101013;      // Input field fill
+  --bg-elevated: #1e1e24;   // Popover & dropdown
+
+  // Crisp Structural Borders (No Fuzzy Halos)
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-focus: #ffffff;
+
+  // Typography Scale
+  --text-primary: #f4f4f5;   // Crisp white
+  --text-secondary: #a1a1aa; // Neutral gray
+  --text-muted: #71717a;     // Subdued gray
+  --text-dim: #52525b;       // Low emphasis
+
+  // Primary Button: Solid Monochrome (Not Gradient Slop)
+  --btn-primary-bg: #f4f4f5;
+  --btn-primary-text: #09090b;
+  --btn-primary-hover: #ffffff;
+
+  // Secondary Button: Structural Surface
+  --btn-secondary-bg: #141417;
+  --btn-secondary-border: rgba(255, 255, 255, 0.1);
+  --btn-secondary-text: #f4f4f5;
+  --btn-secondary-hover: #1c1c21;
+
+  // Semantic Status Colors (Restrained & Muted)
+  --color-success: #10b981;
+  --color-success-bg: rgba(16, 185, 129, 0.08);
+  --color-success-border: rgba(16, 185, 129, 0.2);
+
+  --color-warning: #f59e0b;
+  --color-warning-bg: rgba(245, 158, 11, 0.08);
+  --color-warning-border: rgba(245, 158, 11, 0.2);
+
+  --color-danger: #f43f5e;
+  --color-danger-bg: rgba(244, 63, 94, 0.08);
+  --color-danger-border: rgba(244, 63, 94, 0.2);
+
+  --color-info: #0284c7;
+  --color-info-bg: rgba(2, 132, 199, 0.08);
+  --color-info-border: rgba(2, 132, 199, 0.2);
+
+  // Geometric Radii (Restrained, crisp geometry - no giant pill containers)
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-full: 9999px;
+
+  // Shadows: Clean & Low-Opacity
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+  // Typography Families
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  // Transitions
+  --transition-fast: 120ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+// SCSS Aliases
+$bg-page: var(--bg-page);
+$bg-subtle: var(--bg-subtle);
+$bg-card: var(--bg-card);
+$bg-card-hover: var(--bg-card-hover);
+$bg-panel: var(--bg-panel);
+$bg-input: var(--bg-input);
+
+$border-subtle: var(--border-subtle);
+$border-medium: var(--border-medium);
+$border-strong: var(--border-strong);
+$border-focus: var(--border-focus);
+
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted: var(--text-muted);
+$text-dim: var(--text-dim);
+
+$color-success: var(--color-success);
+$color-warning: var(--color-warning);
+$color-danger: var(--color-danger);
+
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+
+$font-display: var(--font-display);
+$font-body: var(--font-body);
+$font-mono: var(--font-mono);

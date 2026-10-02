@@ -1,20 +1,20 @@
 import { useAuth } from "../hooks/useAuth";
 import { Navigate } from "react-router";
-import React from 'react'
+import React from 'react';
+import LoadingState from "../../../components/LoadingState";
 
-const Protected = ({children}) => {
-    const { loading,user } = useAuth()
+const Protected = ({ children }) => {
+    const { loading, user } = useAuth();
 
-
-    if(loading){
-        return (<main><h1>Loading...</h1></main>)
+    if (loading) {
+        return <LoadingState title="Verifying Session" subtitle="Securely connecting your account..." steps={[]} />;
     }
 
-    if(!user){
-        return <Navigate to={'/login'} />
+    if (!user) {
+        return <Navigate to="/login" replace />;
     }
     
-    return children
-}
+    return children;
+};
 
-export default Protected
+export default Protected;

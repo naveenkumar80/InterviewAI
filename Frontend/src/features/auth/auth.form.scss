@@ -1,49 +1,257 @@
-main{
-    min-height: 100vh;
+@use "../../style/tokens.scss" as *;
+
+.auth-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--bg-page);
+
+  .auth-layout {
     width: 100%;
+    max-width: 920px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
 
+    @media (min-width: 860px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // Brand Info Panel (Left)
+  .auth-brand-panel {
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 2.75rem 2.25rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 
-
-    .form-container{
-        min-width: 350px;
-
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    @media (min-width: 860px) {
+      border-bottom: none;
+      border-right: 1px solid var(--border-subtle);
+      padding: 3.25rem 2.75rem;
     }
 
-    form{
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2.25rem;
+
+      .brand-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: var(--radius-sm);
+        background: var(--bg-input);
+        border: 1px solid var(--border-strong);
+        color: var(--text-primary);
         display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .brand-title {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #ffffff;
+      }
     }
 
-    .form-error{
-        color: #e1034d;
-        margin: 0;
+    .brand-hero {
+      h2 {
+        font-size: 1.65rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 0.85rem;
+        color: #ffffff;
+      }
+
+      p {
+        font-size: 0.885rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1.75rem;
+      }
     }
 
-    .input-group{
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+
+      li {
         display: flex;
-        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+        font-size: 0.845rem;
+        color: var(--text-secondary);
 
-        gap: 0.5rem;
-
-
-        input{
-            border: none;
-            outline: none;
-            padding-inline: 1rem;
-            padding-block: 0.75rem;
-            border-radius: 0.75rem;
+        .check-badge {
+          flex-shrink: 0;
+          color: var(--text-muted);
+          margin-top: 2px;
         }
+      }
     }
 
-    a{
-        color: #e1034d;
-        text-decoration: none;
+    .brand-footer {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.775rem;
+      color: var(--text-muted);
     }
+  }
+
+  // Form Panel (Right)
+  .auth-form-panel {
+    padding: 2.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 640px) {
+      padding: 3.25rem 2.75rem;
+    }
+
+    .form-header {
+      margin-bottom: 1.75rem;
+
+      h1 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.35rem;
+      }
+
+      p {
+        font-size: 0.835rem;
+        color: var(--text-muted);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .form-error-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      background: var(--color-danger-bg);
+      border: 1px solid var(--color-danger-border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 0.85rem;
+      color: #fda4af;
+      font-size: 0.825rem;
+      line-height: 1.4;
+
+      svg {
+        flex-shrink: 0;
+        color: var(--color-danger);
+        margin-top: 2px;
+      }
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+
+      label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .input-icon {
+          position: absolute;
+          left: 0.85rem;
+          color: var(--text-muted);
+          display: flex;
+          align-items: center;
+          pointer-events: none;
+        }
+
+        input {
+          width: 100%;
+          background: var(--bg-input);
+          border: 1px solid var(--border-medium);
+          border-radius: var(--radius-sm);
+          padding: 0.65rem 0.85rem 0.65rem 2.5rem;
+          font-family: var(--font-body);
+          font-size: 0.885rem;
+          color: var(--text-primary);
+          outline: none;
+          transition: border-color var(--transition-fast);
+
+          &::placeholder {
+            color: var(--text-dim);
+          }
+
+          &:focus {
+            border-color: var(--border-focus);
+          }
+        }
+
+        .toggle-password {
+          position: absolute;
+          right: 0.75rem;
+          background: transparent;
+          border: none;
+          color: var(--text-muted);
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          padding: 0.2rem;
+          transition: color var(--transition-fast);
+
+          &:hover {
+            color: var(--text-primary);
+          }
+        }
+      }
+    }
+
+    .submit-button {
+      margin-top: 0.4rem;
+      width: 100%;
+    }
+
+    .form-footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+
+      a {
+        color: var(--text-primary);
+        font-weight: 600;
+        margin-left: 0.35rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }

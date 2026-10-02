@@ -5,10 +5,15 @@ const dns = require("dns")
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
 
+const PORT = process.env.PORT || 5000
+
 connectToDB()
-
-const PORT = process.env.PORT || 3000
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`)
+        })
+    })
+    .catch((err) => {
+        console.error("Failed to start server due to database error:", err.message)
+        process.exit(1)
+    })
